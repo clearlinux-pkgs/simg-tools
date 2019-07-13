@@ -1,6 +1,6 @@
 Name     : simg-tools
 Version  : 8.1.0.r29
-Release  : 4
+Release  : 5
 URL      : https://android.googlesource.com/platform/system/core/+archive/android-8.1.0_r29.tar.gz
 Source0  : https://android.googlesource.com/platform/system/core/+archive/android-8.1.0_r29.tar.gz
 Summary  : No detailed summary available
@@ -45,6 +45,7 @@ export SOURCE_DATE_EPOCH=1525810608
 rm -rf %{buildroot}
 cd libsparse
 install -D -m 755 -t %{buildroot}/usr/bin/ simg2img append2simg img2simg simg2simg
+cd -
 
 %files
 %defattr(-,root,root,-)
