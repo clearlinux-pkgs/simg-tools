@@ -1,6 +1,6 @@
 Name     : simg-tools
 Version  : 8.1.0.r29
-Release  : 5
+Release  : 6
 URL      : https://android.googlesource.com/platform/system/core/+archive/android-8.1.0_r29.tar.gz
 Source0  : https://android.googlesource.com/platform/system/core/+archive/android-8.1.0_r29.tar.gz
 Summary  : No detailed summary available
@@ -20,7 +20,7 @@ No detailed description available
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 export SOURCE_DATE_EPOCH=1525810608
 cd libsparse
 g++ -c -o sparse_read.o sparse_read.cpp -Iinclude -I../base/include -lz
