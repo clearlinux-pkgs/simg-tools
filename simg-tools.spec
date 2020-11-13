@@ -1,6 +1,6 @@
 Name     : simg-tools
 Version  : 8.1.0.r29
-Release  : 6
+Release  : 7
 URL      : https://android.googlesource.com/platform/system/core/+archive/android-8.1.0_r29.tar.gz
 Source0  : https://android.googlesource.com/platform/system/core/+archive/android-8.1.0_r29.tar.gz
 Summary  : No detailed summary available
@@ -23,22 +23,22 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 export SOURCE_DATE_EPOCH=1525810608
 cd libsparse
-g++ -c -o sparse_read.o sparse_read.cpp -Iinclude -I../base/include -lz
-g++ -c -o stringprintf.o ../base/stringprintf.cpp -Iinclude -I../base/include
-gcc -c -o sparse_crc32.o sparse_crc32.c -Iinclude -I../base/include
-gcc -c -o sparse_crc32.o sparse_crc32.c -Iinclude -I../base/include
-gcc -c -o backed_block.o backed_block.c -Iinclude -I../base/include
-gcc -c -o output_file.o output_file.c -Iinclude -I../base/include
-gcc -c -o sparse.o sparse.c -Iinclude -I../base/include
-gcc -c -o sparse_err.o sparse_err.c -Iinclude -I../base/include
-gcc -c -o simg2img.o simg2img.c -Iinclude -I../base/include
-gcc -c -o append2simg.o append2simg.c -Iinclude -I../base/include
-gcc -c -o img2simg.o img2simg.c -Iinclude -I../base/include
-gcc -c -o simg2simg.o simg2simg.c -Iinclude -I../base/include
-g++ -o simg2img simg2img.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
-g++ -o append2simg append2simg.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
-g++ -o img2simg -Iinclude img2simg.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
-g++ -o simg2simg -Iinclude simg2simg.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
+g++ $CFLAGS -c -o sparse_read.o sparse_read.cpp -Iinclude -I../base/include -lz
+g++ $CFLAGS -c -o stringprintf.o ../base/stringprintf.cpp -Iinclude -I../base/include
+gcc $CFLAGS -c -o sparse_crc32.o sparse_crc32.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o sparse_crc32.o sparse_crc32.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o backed_block.o backed_block.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o output_file.o output_file.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o sparse.o sparse.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o sparse_err.o sparse_err.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o simg2img.o simg2img.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o append2simg.o append2simg.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o img2simg.o img2simg.c -Iinclude -I../base/include
+gcc $CFLAGS -c -o simg2simg.o simg2simg.c -Iinclude -I../base/include
+g++ $CFLAGS -o simg2img simg2img.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
+g++ $CFLAGS -o append2simg append2simg.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
+g++ $CFLAGS -o img2simg -Iinclude img2simg.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
+g++ $CFLAGS -o simg2simg -Iinclude simg2simg.o sparse_crc32.o backed_block.o output_file.o sparse.o sparse_err.o sparse_read.o stringprintf.o -lz
 
 %install
 export SOURCE_DATE_EPOCH=1525810608
